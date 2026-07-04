@@ -1,0 +1,17 @@
+{
+  "name": "Lumos Follow",
+  "short_name": "Lumos",
+  "description": "Descubra quem não segue você de volta no Instagram.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#12061F",
+  "theme_color": "#6C2BD9",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
