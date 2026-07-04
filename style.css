@@ -1,1 +1,79 @@
 /* Lumos Follow */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:linear-gradient(180deg,#0f172a,#111827,#000);
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:90%;
+    max-width:400px;
+    text-align:center;
+    padding:30px;
+}
+
+.logo{
+    width:120px;
+    height:120px;
+    border-radius:28px;
+    margin-bottom:20px;
+    box-shadow:0 0 30px rgba(0,255,150,.25);
+}
+
+h1{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+p{
+    color:#cbd5e1;
+    margin-bottom:35px;
+    line-height:1.5;
+}
+
+button{
+    width:100%;
+    border:none;
+    border-radius:16px;
+    padding:18px;
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+#magicButton{
+    background:linear-gradient(90deg,#9333ea,#ec4899);
+    color:white;
+}
+
+#magicPanel{
+    display:none;
+    flex-direction:column;
+    margin-top:25px;
+}
+
+#exportButton{
+    background:#16a34a;
+    color:white;
+}
+
+#loginButton{
+    background:#2563eb;
+    color:white;
+}
