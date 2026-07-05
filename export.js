@@ -11,7 +11,10 @@ analyzeButton.addEventListener("click", async () => {
     const file = fileInput.files[0];
 
     const zip = await JSZip.loadAsync(file);
-
+const followersFile = zip.file("connections/followers_and_following/followers_1.html");
+    const followingFile = zip.file("connections/followers_and_following/following.html");
+    console.log(followersFile);
+console.log(followingFile);
     let arquivos = [];
 
     zip.forEach((relativePath) => {
