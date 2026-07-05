@@ -3,13 +3,22 @@ const analyzeButton = document.querySelector("#analyzeButton");
 
 analyzeButton.addEventListener("click", async () => {
 
-    if (!fileInput.files.length) {
+    const arquivos = [];
+zip.forEach((p)=>arquivos.push(p));
+alert(arquivos.join("\n"));
         alert("Escolha um arquivo ZIP primeiro.");
         return;
     }
 
     const zip = await JSZip.loadAsync(fileInput.files[0]);
+const arquivos = [];
 
+zip.forEach((relativePath) => {
+    arquivos.push(relativePath);
+});
+
+alert(arquivos.join("\n"));
+return;
     let followersFile = null;
     let followingFile = null;
 
