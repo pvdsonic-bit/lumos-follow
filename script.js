@@ -13,7 +13,9 @@ magicButton.addEventListener("click", () => {
 });
 
 document.getElementById("exportButton").addEventListener("click", () => {
-    alert("Modo Exportar Dados será desenvolvido na próxima etapa.");
+
+    window.location.href = "export.html";
+
 });
 
 document.getElementById("loginButton").addEventListener("click", () => {
