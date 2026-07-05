@@ -20,10 +20,13 @@ analyzeButton.addEventListener("click", async () => {
 
     console.log(arquivos);
 
-    alert(
-        "Arquivo aberto!\n\nForam encontrados " +
-        arquivos.length +
-        " arquivos."
-    );
+ alert(
+    "Arquivos encontrados:\n\n" +
+    arquivos.join("\n")
+);
 
 });
+  
+        
+
+
