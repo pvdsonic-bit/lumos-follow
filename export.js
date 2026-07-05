@@ -9,50 +9,20 @@ analyzeButton.addEventListener("click", async () => {
     }
 
     const file = fileInput.files[0];
+
     const zip = await JSZip.loadAsync(file);
 
-    const followersFile = zip.file("connections/followers_and_following/followers_1.html");
-    const followingFile = zip.file("connections/followers_and_following/following.html");
+    let arquivos = [];
 
-    if (!followersFile || !followingFile) {
-        alert("Não foi possível encontrar os arquivos do Instagram dentro do ZIP.");
-        return;
-    }
+    zip.forEach((relativePath) => {
+        arquivos.push(relativePath);
+    });
 
-    const followersHtml = await followersFile.async("string");
-    const followingHtml = await followingFile.async("string");
-        function extrairUsuarios(html) {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, "text/html");
+    console.log(arquivos);
 
-        const usuarios = [];
+    alert(
+        "Arquivos encontrados:\n\n" +
+        arquivos.join("\n")
+    );
 
-        doc.querySelectorAll("a").forEach(link => {
-            const href = link.getAttribute("href");
-
-            if (href && href.includes("instagram.com")) {
-                const usuario = href
-                    .replace("https://www.instagram.com/", "")
-                    .replaceAll("/", "")
-                    .trim()
-                    .toLowerCase();
-
-                if (usuario) {
-                    usuarios.push(usuario);
-                }
-            }
-        });
-
-        return usuarios;
-    }
-
-    const seguidores = extrairUsuarios(followersHtml);
-    const seguindo = extrairUsuarios(followingHtml);
-    const naoSeguem = seguindo.filter(usuario => !seguidores.includes(usuario));
-
-alert(
-    "Você segue " + seguindo.length + " pessoas.\n\n" +
-    "Seguem você: " + seguidores.length + "\n\n" +
-    "Não seguem você de volta (" + naoSeguem.length + "):\n\n" +
-    naoSeguem.join("\n")
-);
+});
